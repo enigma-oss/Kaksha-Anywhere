@@ -2,7 +2,7 @@ import React from "react";
 
 import ReactEmoji from "react-emoji";
 
-const Message = ({ message: { text, user }, name }) => {
+const Message = ({ message: { text, user, date }, name }) => {
   let isSentByCurrentUser = false;
 
   const trimmedName = name.trim().toLowerCase();
@@ -17,7 +17,7 @@ const Message = ({ message: { text, user }, name }) => {
         <div class="bg-primary rounded py-2 px-3 mb-2">
           <p class="text-small mb-0 text-white">{ReactEmoji.emojify(text)}</p>
         </div>
-        <p class="small text-muted">12:00 PM | Aug 13</p>
+        <p class="small text-muted">{date}</p>
       </div>
     </div>
   ) : (
@@ -26,7 +26,7 @@ const Message = ({ message: { text, user }, name }) => {
         <div class="bg-light rounded py-2 px-3 mb-2">
           <p class="text-small mb-0 text-muted">{ReactEmoji.emojify(text)}</p>
         </div>
-        <p class="small text-muted">12:00 PM | Aug 13</p>
+        <p class="small text-muted">{date}</p>
       </div>
     </div>
   );
