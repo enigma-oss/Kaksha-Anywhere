@@ -5,13 +5,15 @@ import ScrollToBottom from "react-scroll-to-bottom";
 import Message from "./Message";
 
 const Messages = ({ messages, name }) => (
-  <ScrollToBottom className="messages">
+  <div>
+    {/* <ScrollToBottom className="w-100"> */}
     {messages.map((message, i) => (
-      <div className="message" key={i}>
+      <div className="" key={i}>
         <Message message={message} name={name} />
       </div>
     ))}
-  </ScrollToBottom>
+    {/* </ScrollToBottom> */}
+  </div>
 );
 
 export default Messages;

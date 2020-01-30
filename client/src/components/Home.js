@@ -4,9 +4,13 @@ import White4 from "./White4";
 
 const Home = ({ location }) => {
   return (
-    <div className="home">
-      <White4 className="white" />
-      <Chat className="chat" location={location} />
+    <div className="row">
+      <div className="col-8">
+        <White4 className="white" />
+      </div>
+      <div className="col-4 chat">
+        <Chat location={location} />
+      </div>
     </div>
   );
 };

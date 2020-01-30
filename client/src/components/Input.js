@@ -1,23 +1,31 @@
 import React from "react";
 
 const Input = ({ setMessage, sendMessage, message }) => (
-  <div className="text-form">
-    <form className="form">
+  <form action="#" class="bg-light">
+    <div class="input-group">
       <input
-        className="input"
         type="text"
-        placeholder="Type a message..."
+        placeholder="Type a message"
+        aria-describedby="button-addon2"
+        class="form-control rounded-0 border-0 py-4 bg-light"
         value={message}
         onChange={({ target: { value } }) => setMessage(value)}
         onKeyPress={event =>
           event.key === "Enter" ? sendMessage(event) : null
         }
       />
-      <button className="sendButton" onClick={e => sendMessage(e)}>
-        Send
-      </button>
-    </form>
-  </div>
+      <div class="input-group-append">
+        <button
+          id="button-addon2"
+          type="submit"
+          class="btn btn-link"
+          onClick={e => sendMessage(e)}
+        >
+          <i class="fa fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </form>
 );
 
 export default Input;

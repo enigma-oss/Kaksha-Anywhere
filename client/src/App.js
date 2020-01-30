@@ -3,7 +3,7 @@ import React from "react";
 import Home from "./components/Home";
 import Join from "./components/Join";
 
-import "./App.css";
+// import "./App.css";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 

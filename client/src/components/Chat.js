@@ -57,17 +57,20 @@ const Chat = ({ location }) => {
   };
 
   return (
-    // <div className="outerContainer">
-    <div className="chat-window">
-      <InfoBar room={room} />
-      <Messages messages={messages} name={name} />
-      <Input
-        message={message}
-        setMessage={setMessage}
-        sendMessage={sendMessage}
-      />
-
-      {/* <TextContainer users={users} /> */}
+    <div className="container-fluid chat">
+      <div class="px-4 py-5 chat-box bg-white">
+        <div className="chat-window">
+          <InfoBar room={room} />
+          <div className="scroll">
+            <Messages messages={messages} name={name} />
+          </div>
+          <Input
+            message={message}
+            setMessage={setMessage}
+            sendMessage={sendMessage}
+          />
+        </div>
+      </div>
     </div>
   );
 };

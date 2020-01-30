@@ -1,4 +1,4 @@
-.chat-window {
+/* .chat-window {
     position: absolute;
     right: 0%;
     width: 30%;
@@ -9,27 +9,25 @@
     bottom: 0%;
     right: 0%;
     width: 30%;
-}
+} */
 
-.message {
-    background-color: black;
-}
-
-.backgroundBlack {
-    background-color: black;
-}
-
+/* 
 .home {
     display: flex;
     flex-direction: row;
-}
+} */
 
-.chat {
+/* .chat {
     position: fixed;
     right: 0%;
     top: 0%;
+} */
+
+.chat {
+    height: 100vh;
 }
 
-.white {
-    width: 30%;
+.scroll {
+    height: 75vh;
+    overflow-y: scroll;
 }
