@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import io from "socket.io-client";
 
-const socket = io("localhost:4000");
+const socket = io("https://boardserver.herokuapp.com");
 
 export default class WhiteBoard extends Component {
   constructor(props) {
