@@ -32,7 +32,7 @@ const Message = ({ message: { text, user, date }, name }) => {
           </p>
           {/* <p className="text-small">{user}</p> */}
         </div>
-        <p className="small text-muted">{date}</p>
+        <p className="small">{date}</p>
       </div>
     </div>
   );
