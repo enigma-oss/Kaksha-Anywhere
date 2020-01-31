@@ -14,7 +14,7 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = "https://boardserver.herokuapp.com";
+  const ENDPOINT = "localhost:4000";
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -36,8 +36,12 @@ const Chat = ({ location }) => {
       setMessages([...messages, message]);
     });
 
-    socket.on("roomData", ({ users }) => {
+    socket.on("roomData", ({ users , chat}) => {
+      console.log(users);
       setUsers(users);
+      console.log(chat);
+      console.log(messages);
+      setMessages([...messages, ...chat]);
     });
 
     return () => {
@@ -45,7 +49,7 @@ const Chat = ({ location }) => {
 
       socket.off();
     };
-  }, [messages]);
+  }, [message, messages]);
 
   const sendMessage = event => {
     event.preventDefault();
