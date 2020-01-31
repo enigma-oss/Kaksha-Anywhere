@@ -15,6 +15,9 @@ mongoose
   .then(() => console.log("DB connected..!"))
   .catch(err => console.log(err));
 
+// Load Posts model
+const Chat = require('./models/Chat');
+
 const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 const router = require("./router");
 
@@ -57,11 +60,25 @@ io.on("connection", client => {
     const user = getUser(client.id);
     console.log(user);
     const date = new Date();
-    io.to(user.room).emit("message", {
+    const messageData = {
       user: user.name,
       text: message,
       date: dateFormat(date)
-    });
+    };
+    chatMessage = new Chat();
+    chatMessage.user = messageData.user;
+    chatMessage.text = messageData.text;
+    chatMessage.date = messageData.date;
+    chatMessage.save((function(err){
+      if(err)
+        throw err;
+      else
+        console.log("saved!");
+    }));
+    
+    io.to(user.room).emit("message", messageData);
+    
+    
 
     callback();
   });
