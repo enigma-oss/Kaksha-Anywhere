@@ -18,7 +18,7 @@ const Message = ({ message: { text, user, date }, name }) => {
           <p className="text-small mb-0 text-white">
             {ReactEmoji.emojify(text)}
           </p>
-          {/* <p className="text-small">{user}</p> */}
+          <p className="text-small">Username : {user}</p>
         </div>
         <p className="small text-muted">{date}</p>
       </div>
@@ -30,7 +30,7 @@ const Message = ({ message: { text, user, date }, name }) => {
           <p className="text-small mb-0 text-muted">
             {ReactEmoji.emojify(text)}
           </p>
-          {/* <p className="text-small">{user}</p> */}
+          <p className="text-small">Username : {user}</p>
         </div>
         <p className="small">{date}</p>
       </div>
