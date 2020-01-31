@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import io from "socket.io-client";
+import Slider, { Range } from 'rc-slider';
 
 const socket = io("https://boardserver.herokuapp.com");
 
@@ -95,7 +96,7 @@ export default class WhiteBoard extends Component {
 
     this.whiteboard.current.addEventListener("touchend", this.onMouseUp, false);
 
-    window.addEventListener("resize", this.onResize);
+    // window.addEventListener("resize", this.onResize);
   }
 
   drawLine = (x0, y0, x1, y1, color, emit, force) => {
@@ -190,12 +191,12 @@ export default class WhiteBoard extends Component {
     });
   };
 
-  onResize = () => {
-    this.setState({
-      windowWidth: window.innerWidth,
-      windowHeight: window.innerHeight
-    });
-  };
+  // onResize = () => {
+  //   this.setState({
+  //     windowWidth: window.innerWidth,
+  //     windowHeight: window.innerHeight
+  //   });
+  // };
 
   throttle = (callback, delay) => {
     let previousCall = new Date().getTime();
@@ -272,7 +273,9 @@ export default class WhiteBoard extends Component {
             name="#00bcd4"
             className="color cyan"
           ></button>
-          <button className=""></button>
+          <button className=""><Slider />
+    <Range /></button>
+
         </div>
       </div>
     );
