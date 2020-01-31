@@ -6,7 +6,7 @@ const White2 = () => {
   var canvas = document.getElementsByClassName("whiteboard")[0];
   var colors = document.getElementsByClassName("color");
   console.log(canvas);
-  console.log(colors);
+  // console.log(colors);
   var context = canvas.getContext("2d");
   var current = {
     color: "black"

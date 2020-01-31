@@ -209,16 +209,17 @@ export default class WhiteBoard extends Component {
     };
   };
 
-  selectColor = color => {
+  selectColor = e => {
+    const color = e.currentTarget.getAttribute("name");
     this.setState(() => {
       socket.emit("color-change", {
         id: this.state.id,
         username: this.state.username,
         room: this.state.room,
-        color: color.hex
+        color: color
       });
       return {
-        currentColor: color.hex
+        currentColor: color
       };
     });
   };
@@ -240,6 +241,33 @@ export default class WhiteBoard extends Component {
           ref={this.whiteboard}
           className="whiteboard"
         />
+        <div className="colors">
+          <button
+            onClick={this.selectColor}
+            name="#fff"
+            className="color black"
+          ></button>
+          <button
+            onClick={this.selectColor}
+            name="#ff0000"
+            className="color red"
+          ></button>
+          <button
+            onClick={this.selectColor}
+            name="#00ff00"
+            className="color green"
+          ></button>
+          <button
+            onClick={this.selectColor}
+            name="#0000ff"
+            className="color blue"
+          ></button>
+          <button
+            onClick={this.selectColor}
+            name="#ffff00"
+            className="color yellow"
+          ></button>
+        </div>
       </div>
     );
   }

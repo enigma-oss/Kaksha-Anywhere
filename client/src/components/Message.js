@@ -14,7 +14,7 @@ const Message = ({ message: { text, user, date }, name }) => {
   return isSentByCurrentUser ? (
     <div className="media w-50 ml-auto mb-3">
       <div className="media-body">
-        <div className="bg-primary rounded py-2 px-3 mb-2">
+        <div className="bg-primary rounded py-2 px-3 mb-2 mr-2">
           <p className="text-small mb-0 text-white">
             {ReactEmoji.emojify(text)}
           </p>
