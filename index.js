@@ -48,10 +48,22 @@ io.on("connection", client => {
       .to(user.room)
       .emit("message", { user: "admin", text: `${user.name} has joined!` });
 
-    io.to(user.room).emit("roomData", {
-      room: user.room,
-      users: getUsersInRoom(user.room)
+    Chat.find({}, (err, chats) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(chats);
+        io.to(user.room).emit("roomData", {
+          room: user.room,
+          users: getUsersInRoom(user.room),
+          chat: chats.map(message => {
+            return {user: message.user, text: message.text};
+          }),
+        });
+      }
     });
+    
+    
 
     callback();
   });
