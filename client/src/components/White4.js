@@ -244,29 +244,35 @@ export default class WhiteBoard extends Component {
         <div className="colors">
           <button
             onClick={this.selectColor}
-            name="#fff"
-            className="color black"
+            name="#000"
+            className="color black btn-circle"
           ></button>
           <button
             onClick={this.selectColor}
-            name="#ff0000"
+            name="#f44336"
             className="color red"
           ></button>
           <button
             onClick={this.selectColor}
-            name="#00ff00"
+            name="#36c185"
             className="color green"
           ></button>
           <button
             onClick={this.selectColor}
-            name="#0000ff"
+            name="#2196f3"
             className="color blue"
           ></button>
           <button
             onClick={this.selectColor}
-            name="#ffff00"
+            name="#ffc400"
             className="color yellow"
           ></button>
+          <button
+            onClick={this.selectColor}
+            name="#00bcd4"
+            className="color cyan"
+          ></button>
+          <button className=""></button>
         </div>
       </div>
     );

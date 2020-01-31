@@ -4,8 +4,12 @@
 
 .color {
     display: inline-block;
-    height: 48px;
-    width: 48px;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 6px;
+
 }
 
 .color.black {
@@ -13,17 +17,21 @@
 }
 
 .color.red {
-    background-color: red;
+    background-color: #f44336;
 }
 
 .color.green {
-    background-color: green;
+    background-color: #36c185;
 }
 
 .color.blue {
-    background-color: blue;
+    background-color: #2196f3;
 }
 
 .color.yellow {
-    background-color: yellow;
+    background-color: #ffc400;
+}
+
+.color .cyan {
+    background-color: #00bcd4;
 }
