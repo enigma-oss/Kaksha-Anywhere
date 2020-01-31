@@ -57,7 +57,7 @@ const Chat = ({ location }) => {
 
   return (
     <div className="container-fluid chat border border-light">
-      <div class="px-4 py-5 chat-box bg-white">
+      <div className="px-4 py-5 chat-box bg-white">
         <div className="chat-window">
           <InfoBar room={room} />
           <div className="scroll">
