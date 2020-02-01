@@ -15,10 +15,10 @@ const Message = ({ message: { text, user, date }, name }) => {
     <div className="media w-50 ml-auto mb-3">
       <div className="media-body">
         <div className="bg-primary rounded py-2 px-3 mb-2 mr-2">
+          <p className="text-username-self">{user}</p>
           <p className="text-small mb-0 text-white">
             {ReactEmoji.emojify(text)}
           </p>
-          <p className="text-small">Username : {user}</p>
         </div>
         <p className="small text-muted">{date}</p>
       </div>
@@ -27,10 +27,10 @@ const Message = ({ message: { text, user, date }, name }) => {
     <div className="media w-50 mb-3">
       <div className="media-body ml-3">
         <div className="bg-light rounded py-2 px-3 mb-2">
+        <p className="text-username-others">{user}</p>
           <p className="text-small mb-0 text-muted">
             {ReactEmoji.emojify(text)}
           </p>
-          <p className="text-small">Username : {user}</p>
         </div>
         <p className="small">{date}</p>
       </div>

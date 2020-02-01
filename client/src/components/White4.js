@@ -11,8 +11,8 @@ export default class WhiteBoard extends Component {
       id: null,
       drawing: false,
       currentColor: "red",
-      windowHeight: (window.innerHeight * 60) / 100,
-      windowWidth: (window.innerWidth * 60) / 100,
+      windowHeight: window.innerHeight * 0.9,
+      windowWidth: window.innerWidth * 0.6,
       cleared: false,
       username: null,
       room: null,
@@ -242,42 +242,48 @@ export default class WhiteBoard extends Component {
           ref={this.whiteboard}
           className="whiteboard"
         />
-        <div className="colors">
-          <button
-            onClick={this.selectColor}
-            name="#000"
-            className="color black btn-circle"
-          ></button>
-          <button
-            onClick={this.selectColor}
-            name="#f44336"
-            className="color red"
-          ></button>
-          <button
-            onClick={this.selectColor}
-            name="#36c185"
-            className="color green"
-          ></button>
-          <button
-            onClick={this.selectColor}
-            name="#2196f3"
-            className="color blue"
-          ></button>
-          <button
-            onClick={this.selectColor}
-            name="#ffc400"
-            className="color yellow"
-          ></button>
-          <button
-            onClick={this.selectColor}
-            name="#00bcd4"
-            className="color cyan"
-          ></button>
-          <button className=""><Slider />
-    <Range /></button>
-
+        <div className="color-bar">
+        <div className="color-pallete">
+            <button
+              onClick={this.selectColor}
+              name="#000000"
+              className="color black btn-circle"
+            ></button>
+            <button
+              onClick={this.selectColor}
+              name="#f44336"
+              className="color red"
+            ></button>
+            <button
+              onClick={this.selectColor}
+              name="#36c185"
+              className="color green"
+            ></button>
+            <button
+              onClick={this.selectColor}
+              name="#2196f3"
+              className="color blue"
+            ></button>
+            <button
+              onClick={this.selectColor}
+              name="#00bcd4"
+              className="color cyan"
+            ></button>
+             <button
+              onClick={this.selectColor}
+              name="#ffc400"
+              className="color yellow"
+            ></button>
+            <button
+              onClick={this.selectColor}
+              name="#ffffff"
+              className="color white"
+            ></button>
+            </div>
+          </div>
         </div>
-      </div>
+
+
     );
   }
 }

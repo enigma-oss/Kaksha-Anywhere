@@ -21,6 +21,17 @@ body {
     border-radius: 1rem;
 }
 
+.text-username-others{
+    font-size: 1.0rem;
+    font-weight: bold;
+}
+
+.text-username-self{
+    font-size: 1.0rem;
+    color: white;
+    font-weight: bold;
+}
+
 .text-small {
     font-size: 0.9rem;
 }

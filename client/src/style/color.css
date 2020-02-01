@@ -1,5 +1,19 @@
 .colors {
-    position: fixed;
+    position: absolute;
+    color: white;
+    width: 60%;
+}
+
+.color-pallete{
+    width: 27%;
+  /*  border-radius: 0px 5px 5px 0px;*/
+    margin-left: -45px;
+    padding-left: 50px;
+    background: white;
+}
+
+.color-bar{
+    background: #611f69;
 }
 
 .color {
@@ -8,8 +22,13 @@
     width: 28px;
     border-radius: 50%;
     border: none;
-    margin-left: 6px;
+    margin-left: 10px;
+    box-shadow: 1px 1px 5px;
 
+}
+
+.color:hover{
+    transform: scale(1.25);
 }
 
 .color.black {
@@ -32,6 +51,6 @@
     background-color: #ffc400;
 }
 
-.color .cyan {
+.color.cyan {
     background-color: #00bcd4;
 }
