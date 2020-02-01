@@ -38,6 +38,10 @@ io.on("connection", client => {
     client.broadcast.emit("stroke-change", stroke);    
   });
 
+  client.on("clear", (clear) => {
+		io.in(clear).emit("cleared", clear);
+	});
+
   client.on("join", ({ name, room }, callback) => {
     console.log(name, room);
     const { error, user } = addUser({ id: client.id, name, room });
