@@ -35,6 +35,10 @@
     transform: scale(1.25);
 }
 
+.slider {
+    min-width: 100px;
+}
+
 .color.black {
     background-color: black;
 }

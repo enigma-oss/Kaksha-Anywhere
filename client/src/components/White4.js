@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import io from "socket.io-client";
-import Slider, { Range } from 'rc-slider';
 
 const socket = io("https://boardserver.herokuapp.com");
 
