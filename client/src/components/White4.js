@@ -7,6 +7,7 @@ export default class WhiteBoard extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      style: { backgroundColor: "Blue" },
       id: null,
       drawing: false,
       currentColor: "red",
@@ -44,6 +45,13 @@ export default class WhiteBoard extends Component {
       this.state.whiteboard
         .getContext("2d")
         .clearRect(0, 0, window.innerWidth, window.innerHeight);
+    });
+
+    socket.on("stroke-change", data => {
+      console.log("data:-", data);
+      this.setState({
+        stroke: data.stroke
+      });
     });
 
     socket.on("drawing", data => {
@@ -212,6 +220,9 @@ export default class WhiteBoard extends Component {
 
   selectColor = e => {
     const color = e.currentTarget.getAttribute("name");
+    this.setState({
+      style: { backgroundColor: color }
+    });
     this.setState(() => {
       socket.emit("color-change", {
         id: this.state.id,
@@ -226,6 +237,12 @@ export default class WhiteBoard extends Component {
   };
 
   clearBoard = () => {
+    this.state.whiteboard.clearRect(
+      0,
+      0,
+      this.state.windowWidth.width,
+      this.state.windowHeight
+    );
     socket.emit("clear", this.state.room);
   };
 
@@ -237,13 +254,13 @@ export default class WhiteBoard extends Component {
     const stroke = e.currentTarget.getAttribute("size");
     this.setState(() => {
       socket.emit("stroke-change", {
-        id: this.state.id,
-        username: this.state.username,
-        room: this.state.room,
+        // id: this.state.id,
+        // username: this.state.username,
+        // room: this.state.room,
         stroke: stroke
       });
       return {
-        currentStroke: stroke
+        stroke: stroke
       };
     });
   };
@@ -302,30 +319,35 @@ export default class WhiteBoard extends Component {
               name="#000000"
               size="1"
               className="stroke smallest"
+              style={this.state.style}
             ></button>
             <button
               onClick={this.selectSize}
               name="#000000"
               size="2"
               className="stroke smaller"
+              style={this.state.style}
             ></button>
             <button
               onClick={this.selectSize}
               name="#000000"
               size="4"
               className="stroke normal"
+              style={this.state.style}
             ></button>
             <button
               onClick={this.selectSize}
               name="#000000"
               size="5"
               className="stroke larger"
+              style={this.state.style}
             ></button>
             <button
               onClick={this.selectSize}
               name="#000000"
               size="7"
               className="stroke largest"
+              style={this.state.style}
             ></button>
           </div>
         </div>
