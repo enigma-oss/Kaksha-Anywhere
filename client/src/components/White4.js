@@ -46,6 +46,13 @@ export default class WhiteBoard extends Component {
         .clearRect(0, 0, window.innerWidth, window.innerHeight);
     });
 
+    socket.on("stroke-change", data => {
+      console.log("data:-", data);
+      this.setState({
+        stroke: data.stroke
+      });
+    });
+
     socket.on("drawing", data => {
       let w = window.innerWidth;
       let h = window.innerHeight;
@@ -237,13 +244,13 @@ export default class WhiteBoard extends Component {
     const stroke = e.currentTarget.getAttribute("size");
     this.setState(() => {
       socket.emit("stroke-change", {
-        id: this.state.id,
-        username: this.state.username,
-        room: this.state.room,
+        // id: this.state.id,
+        // username: this.state.username,
+        // room: this.state.room,
         stroke: stroke
       });
       return {
-        currentStroke: stroke
+        stroke: stroke
       };
     });
   };
