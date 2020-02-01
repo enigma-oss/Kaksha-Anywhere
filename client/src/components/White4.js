@@ -243,7 +243,7 @@ export default class WhiteBoard extends Component {
           className="whiteboard"
         />
         <div className="color-bar">
-        <div className="color-pallete">
+          <div className="color-pallete">
             <button
               onClick={this.selectColor}
               name="#000000"
@@ -281,6 +281,11 @@ export default class WhiteBoard extends Component {
             ></button>
             </div>
           </div>
+
+          <div>
+          
+          </div>
+
         </div>
 
 
