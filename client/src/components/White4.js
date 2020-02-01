@@ -10,6 +10,7 @@ export default class WhiteBoard extends Component {
       id: null,
       drawing: false,
       currentColor: "red",
+      stroke: 2,
       windowHeight: window.innerHeight * 0.9,
       windowWidth: window.innerWidth * 0.6,
       cleared: false,
@@ -104,7 +105,7 @@ export default class WhiteBoard extends Component {
     context.moveTo(x0, y0);
     context.lineTo(x1, y1);
     context.strokeStyle = color;
-    context.lineWidth = 2;
+    context.lineWidth = this.state.stroke;
     // if (force) {
     // 	context.lineWidth = 1.75 * (force * (force + 3.75));
     // }
@@ -232,6 +233,21 @@ export default class WhiteBoard extends Component {
     socket.emit("leaveroom", { id: this.state.id, room: this.state.room });
   };
 
+  selectSize = e => {
+    const stroke = e.currentTarget.getAttribute("size");
+    this.setState(() => {
+      socket.emit("stroke-change", {
+        id: this.state.id,
+        username: this.state.username,
+        room: this.state.room,
+        stroke: stroke
+      });
+      return {
+        currentStroke: stroke
+      };
+    });
+  };
+
   render() {
     return (
       <div>
@@ -241,8 +257,8 @@ export default class WhiteBoard extends Component {
           ref={this.whiteboard}
           className="whiteboard"
         />
-        <div className="color-bar">
-          <div className="color-pallete">
+        <div className="color-bar row">
+          <div className="color-pallete col-10">
             <button
               onClick={this.selectColor}
               name="#000000"
@@ -268,7 +284,7 @@ export default class WhiteBoard extends Component {
               name="#00bcd4"
               className="color cyan"
             ></button>
-             <button
+            <button
               onClick={this.selectColor}
               name="#ffc400"
               className="color yellow"
@@ -278,40 +294,42 @@ export default class WhiteBoard extends Component {
               name="#ffffff"
               className="color white"
             ></button>
-            </div>
           </div>
 
-          <div className="size-select-bar">
+          <div className="size-select-bar col-2">
             <button
-                onClick={this.selectSize}
-                name="#000000"
-                className="smallest"
-              ></button>
-              <button
-                onClick={this.selectSize}
-                name="#000000"
-                className="smaller"
-              ></button> 
-              <button
-                onClick={this.selectSize}
-                name="#000000"
-                className="normal"
-              ></button> 
-              <button
-                onClick={this.selectSize}
-                name="#000000"
-                className="larger"
-              ></button>
-              <button
-                onClick={this.selectSize}
-                name="#000000"
-                className="largest"
-              ></button>
+              onClick={this.selectSize}
+              name="#000000"
+              size="1"
+              className="stroke smallest"
+            ></button>
+            <button
+              onClick={this.selectSize}
+              name="#000000"
+              size="2"
+              className="stroke smaller"
+            ></button>
+            <button
+              onClick={this.selectSize}
+              name="#000000"
+              size="4"
+              className="stroke normal"
+            ></button>
+            <button
+              onClick={this.selectSize}
+              name="#000000"
+              size="5"
+              className="stroke larger"
+            ></button>
+            <button
+              onClick={this.selectSize}
+              name="#000000"
+              size="7"
+              className="stroke largest"
+            ></button>
           </div>
-
         </div>
-
-
+      </div>
     );
   }
 }

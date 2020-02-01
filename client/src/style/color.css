@@ -1,23 +1,25 @@
 .colors {
     position: absolute;
-  /*  color: white;*/
+    /*  color: white;*/
     width: 60%;
 }
 
-.color-pallete{
+.color-pallete {
     width: 27%;
-  /*  border-radius: 0px 5px 5px 0px;*/
-    margin-left: -45px;
+    /*  border-radius: 0px 5px 5px 0px;*/
+    margin-left: -25px;
     padding-left: 50px;
     background: white;
+    background-color: #eeeeee;
 }
 
-.color-bar{
+.color-bar {
     background: #611f69;
     height: 5%;
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: stretch;
+    background-color: #eeeeee;
 }
 
 .color {
@@ -28,10 +30,11 @@
     border: none;
     margin-left: 10px;
     box-shadow: 1px 1px 5px;
+    background-color: #eeeeee;
 
 }
 
-.color:hover{
+.color:hover {
     transform: scale(1.25);
 }
 
@@ -63,7 +66,45 @@
     background-color: #00bcd4;
 }
 
-.size-select-bar{
+.size-select-bar {
     width: 30%;
     background: white;
+    background-color: #eeeeee;
+}
+
+.stroke {
+    background-color: black;
+    display: inline-block;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 10px;
+    box-shadow: 1px 1px 5px;
+}
+
+
+.smallest {
+    height: 14px;
+    width: 14px;
+}
+
+.smaller {
+    height: 20px;
+    width: 20px;
+}
+
+.normal {
+    height: 26px;
+    width: 26px;
+}
+
+.larger {
+    height: 32px;
+    width: 32px;
+}
+
+.largest {
+    height: 36px;
+    width: 36px;
 }

@@ -1,64 +1,62 @@
-
-body{
-    overflow-x: hidden;
+body {
+  overflow-x: hidden;
 }
 
-.chat-box{
-    padding-top: 5px;
+.chat-box {
+  padding-top: 5px;
 
-    background: white;
+  background: white;
 }
 
-.onlineIcon{
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    background: #40ff00;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 5px;
+.onlineIcon {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: #40ff00;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
 }
 .chat-window {
-    position: fixed;
-    height: 100%;
-    right: 20px;
-/*    width: ;*/
-    width: 30%;
+  position: fixed;
+  height: 100%;
+  right: 20px;
+  /*    width: ;*/
+  width: 30%;
   /* d isplay: inline-block;*/
- /*   color: red;
+  /*   color: red;
     background: yellow;*/
 }
 
 .text-form {
-    position: fixed;
-    bottom: 0%;
-    right: 0%;
-    width: 30%;
+  position: fixed;
+  bottom: 0%;
+  right: 0%;
+  width: 30%;
 }
 
- 
 .home {
-    display: flex;
-    flex-direction: row;
-} 
+  display: flex;
+  flex-direction: row;
+}
 
 .chat {
-/*    margin: 0px auto;*/
-/*    background-color: #bbccdd;
+  /*    margin: 0px auto;*/
+  /*    background-color: #bbccdd;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     padding: 10px*/
-    height: 100vh;
-    display: flex; /* this enables flex layout */
-    flex-direction: column; /* child divs are placed in column */
-} 
-
-.scroll {
-    height: 80%;
-    overflow-x: hidden;
+  height: 100vh;
+  display: flex; /* this enables flex layout */
+  flex-direction: column; /* child divs are placed in column */
 }
 
-.leftInnerContainer{
-    display:flex;
+.scroll {
+  height: 80%;
+  overflow-x: hidden;
+}
+
+.leftInnerContainer {
+  display: flex;
 }
 
 /*.infoBar{
@@ -69,17 +67,16 @@ body{
     width: 100%;
     display: flex;
 }*/
-.w-100{
-    height: 100%;
-    width: 100%;
+.w-100 {
+  height: 100%;
+  width: 100%;
 }
 textarea:focus,
 input:focus,
 input::selection {
-    outline: none;
+  outline: none;
 }
 
-
 *:focus {
-    outline: none;
+  outline: none;
 }
