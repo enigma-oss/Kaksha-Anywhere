@@ -1,2 +1,2 @@
-# Canvas Chat App
-A real time canvas and chat application to present ideas, solve doubts by educators. 
+# Kaksha Anywhere
+A real time drawing board canvas and chat application to present ideas, solve doubts by educators and students. 
