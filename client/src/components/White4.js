@@ -282,8 +282,32 @@ export default class WhiteBoard extends Component {
             </div>
           </div>
 
-          <div>
-          
+          <div className="size-select-bar">
+            <button
+                onClick={this.selectSize}
+                name="#000000"
+                className="smallest"
+              ></button>
+              <button
+                onClick={this.selectSize}
+                name="#000000"
+                className="smaller"
+              ></button> 
+              <button
+                onClick={this.selectSize}
+                name="#000000"
+                className="normal"
+              ></button> 
+              <button
+                onClick={this.selectSize}
+                name="#000000"
+                className="larger"
+              ></button>
+              <button
+                onClick={this.selectSize}
+                name="#000000"
+                className="largest"
+              ></button>
           </div>
 
         </div>
