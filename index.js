@@ -27,9 +27,15 @@ app.use(router);
 io.on("connection", client => {
   console.log("client connnected...");
 
+
+
   client.on("drawing", data => {
     const user = getUser(client.id);
     client.broadcast.emit("drawing", data);
+  });
+
+  client.on("stroke-change", stroke => {
+    client.broadcast.emit("stroke-change", stroke);    
   });
 
   client.on("join", ({ name, room }, callback) => {
